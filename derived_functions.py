@@ -41,7 +41,7 @@ def retired_deritative(t, h, beta, v, s0, i0, r0):
     elif t in memo_retired:  # Comprobar si el resultado ya está memoizado
         return memo_retired[t]
     else:
-        result = retired_deritative(t-h, h, beta, v, s0, i0, r0) + h * v * infected_deritative(t-h, h, beta, v, s0, i0, r0)
+        result = retired_deritative(t-h, h, beta, v, s0, i0, r0) + h * (v * infected_deritative(t-h, h, beta, v, s0, i0, r0))
         memo_retired[t] = result  # Almacenar el resultado memoizado
         return result
 
@@ -53,7 +53,7 @@ def infected_deritative(t, h, beta, v, s0, i0, r0):
     elif t in memo_infected:
         return memo_infected[t]
     else:
-        result = infected_deritative(t-h, h, beta, v, s0, i0, r0) + h * beta * suceptible_deritative(t-h, h, beta, v, s0, i0, r0) - v * infected_deritative(t-h, h, beta, v, s0, i0, r0)
+        result = infected_deritative(t-h, h, beta, v, s0, i0, r0) + h * (beta * suceptible_deritative(t-h, h, beta, v, s0, i0, r0) * infected_deritative(t-h, h, beta, v, s0, i0, r0) - v * infected_deritative(t-h, h, beta, v, s0, i0, r0))
         memo_infected[t] = result
         return result
 
@@ -65,7 +65,7 @@ def suceptible_deritative(t, h, beta, v, s0, i0, r0):
     elif t in memo_suceptible:
         return memo_suceptible[t]
     else:
-        result = suceptible_deritative(t-h, h, beta, v, s0, i0, r0) + h * (-beta) * suceptible_deritative(t-h, h, beta, v, s0, i0, r0) * infected_deritative(t-h, h, beta, v, s0, i0, r0)
+        result = suceptible_deritative(t-h, h, beta, v, s0, i0, r0) + h * ((-beta) * suceptible_deritative(t-h, h, beta, v, s0, i0, r0) * infected_deritative(t-h, h, beta, v, s0, i0, r0))
         memo_suceptible[t] = result
         return result
 
