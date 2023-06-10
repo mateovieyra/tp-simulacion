@@ -60,10 +60,36 @@ To observe the data, you must replace all the X's characters with the correspond
 -r: R0. Initial value of Retired People.
 ```
 
-A good example of parameters is the following:
+To observe the experiments, you can run the following commands: 
+
+### Experiment 1
 
 ```
 python3 -m virus_propagation -t 20 -d 1 -b 0.0022 -v 0.4477 -s 763 -i 1 -r 0
+```
+
+### Experiment 2.1
+
+```
+python3 -m virus_propagation -t 20 -d 1 -b 0.0044 -v 0.10 -s 763 -i 1 -r 0
+```
+
+### Experiment 2.2
+
+```
+python3 -m virus_propagation -t 60 -d 1 -b 0.0044 -v 0.10 -s 763 -i 1 -r 0
+```
+
+### Experiment 3.1
+
+```
+python3 -m virus_propagation -t 20 -d 1 -b 0.0011 -v 0.4477 -s 763 -i 1 -r 0
+```
+
+### Experiment 3.2
+
+```
+python3 -m virus_propagation -t 50 -d 1 -b 0.0011 -v 0.4477 -s 763 -i 1 -r 0
 ```
 
 ---
