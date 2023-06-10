@@ -59,6 +59,8 @@ To observe the data, you must replace all the X's characters with the correspond
 -i: I0. Initial value of Infected People.
 -r: R0. Initial value of Retired People.
 ```
+---
+## Experiments
 
 To observe the experiments, you can run the following commands: 
 
@@ -90,6 +92,12 @@ python3 -m virus_propagation -t 20 -d 1 -b 0.0011 -v 0.4477 -s 763 -i 1 -r 0
 
 ```
 python3 -m virus_propagation -t 50 -d 1 -b 0.0011 -v 0.4477 -s 763 -i 1 -r 0
+```
+
+### Experiment 4
+
+```
+python3 -m virus_propagation -t 20 -d 1 -b 0.0022 -v 0.4477 -s 1500 -i 1 -r 0
 ```
 
 ---
